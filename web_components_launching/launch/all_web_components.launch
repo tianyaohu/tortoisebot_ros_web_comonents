@@ -1,0 +1,24 @@
+<!-- Master launch file to run multiple ROS packages and nodes -->
+<launch>
+
+    <!-- Launch tortoisebot docking from the tortoisebot_gazebo package -->
+    <include file="$(find tortoisebot_gazebo)/launch/tortoisebot_docking.launch"/>
+
+    <!-- Launch the web server from the course_web_dev_ros package -->
+    <include file="$(find course_web_dev_ros)/launch/web.launch"/>
+
+    <!-- Launch mapping from the tortoisebot_slam package -->
+    <include file="$(find tortoisebot_slam)/launch/mapping.launch"/>
+
+    <!-- Run the action server from the course_web_dev_ros package -->
+    <node pkg="course_web_dev_ros" type="tortoisebot_action_server.py" name="tortoisebot_action_server" output="screen"/>
+
+    <!-- Run tf2 web republisher -->
+    <node pkg="tf2_web_republisher" type="tf2_web_republisher"  name="tf2_web_republisher" output="screen"/>
+    
+    <node pkg="interactive_marker_proxy" type="proxy" name="interactive_marker_proxy" output="screen">
+        <param name="topic_ns" value="simple_marker"/>
+        <param name="target_frame" value="map"/>
+    </node>
+
+</launch>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Start roscore -->
+    <master auto="start"/>
+
+    <!-- Run interactive marker tutorial -->
+    <node name="basic_controls" pkg="interactive_marker_tutorials" type="basic_controls" output="screen"/>
+
+    <!-- Run interactive marker proxy -->
+    <node name="interactive_marker_proxy" pkg="interactive_marker_proxy" type="proxy" output="screen">
+        <param name="topic_ns" value="/basic_controls"/>
+        <param name="target_frame" value="rotating_frame"/>
+    </node>
+
+    <!-- Run tf2 web republisher -->
+    <node name="tf2_web_republisher" pkg="tf2_web_republisher" type="tf2_web_republisher" output="screen"/>
+
+    <!-- Include the web.launch file from course_web_dev_ros package -->
+    <include file="$(find course_web_dev_ros)/launch/web.launch"/>
+</launch>
