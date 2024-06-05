@@ -16,9 +16,13 @@
     <!-- Run tf2 web republisher -->
     <node pkg="tf2_web_republisher" type="tf2_web_republisher"  name="tf2_web_republisher" output="screen"/>
     
+    <!-- Interactive Marker Proxy (MUST to tunnel update to http server) -->
     <node pkg="interactive_marker_proxy" type="proxy" name="interactive_marker_proxy" output="screen">
         <param name="topic_ns" value="simple_marker"/>
         <param name="target_frame" value="map"/>
     </node>
+
+    <!-- Start Interactive Marker Server -->
+    <node pkg="web_components_launching" type="marker_node.py"  name="interactive_marker_server" output="screen"/>
 
 </launch>
