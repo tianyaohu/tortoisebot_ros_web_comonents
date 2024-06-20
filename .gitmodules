@@ -1,18 +1,19 @@
-[submodule "tf2_web_republisher"]
-	path = tf2_web_republisher
-	url = ./tf2_web_republisher/
-[submodule "web_video_server"]
-	path = web_video_server
-	url = ./web_video_server/
-[submodule "course_web_dev_ros"]
-	path = course_web_dev_ros
-	url = ./course_web_dev_ros/
-[submodule "interactive_marker_proxy"]
-	path = interactive_marker_proxy
-	url = ./interactive_marker_proxy/
-[submodule "tortoisebot"]
-	path = tortoisebot
-	url = ./tortoisebot/
 [submodule "async_web_server_cpp"]
-	path = async_web_server_cpp
-	url = ./async_web_server_cpp/
+	    path = async_web_server_cpp
+	    url = https://github.com/fkie/async_web_server_cpp.git
+[submodule "course_web_dev_ros"]
+	    path = course_web_dev_ros
+	    url = https://bitbucket.org/theconstructcore/course_web_dev_ros.git
+[submodule "interactive_marker_proxy"]
+	    path = interactive_marker_proxy
+	    url = https://github.com/RobotWebTools/interactive_marker_proxy.git
+[submodule "tf2_web_republisher"]
+	    path = tf2_web_republisher
+	    url = https://github.com/RobotWebTools/tf2_web_republisher.git
+
+[submodule "tortoisebot"]
+	    path = tortoisebot
+	        url = https://github.com/rigbetellabs/tortoisebot.git
+[submodule "web_video_server"]
+	    path = web_video_server
+	        url = https://github.com/RobotWebTools/web_video_server.git
