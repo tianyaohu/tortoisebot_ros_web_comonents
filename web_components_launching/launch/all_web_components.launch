@@ -11,7 +11,7 @@
     <include file="$(find tortoisebot_slam)/launch/mapping.launch"/>
 
     <!-- Run the action server from the course_web_dev_ros package -->
-    <node pkg="course_web_dev_ros" type="tortoisebot_action_server.py" name="tortoisebot_action_server" output="screen"/>
+    <node pkg="course_web_dev_ros" type="turtlebot_2_action_server.py" name="tortoisebot_action_server" output="screen"/>
 
     <!-- Run tf2 web republisher -->
     <node pkg="tf2_web_republisher" type="tf2_web_republisher"  name="tf2_web_republisher" output="screen"/>

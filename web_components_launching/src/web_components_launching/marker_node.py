@@ -15,7 +15,7 @@ class MarkerFactory:
         """
         self.server = server
         self.frame_id = frame_id
-        self.client = actionlib.SimpleActionClient('tortoisebot_as', WaypointActionAction)
+        self.client = actionlib.SimpleActionClient('turtlebot2_action_service_as', WaypointActionAction)
         rospy.loginfo("Waiting for action server to start.")
         self.client.wait_for_server()
         rospy.loginfo("Action server started, ready to send goals.")
