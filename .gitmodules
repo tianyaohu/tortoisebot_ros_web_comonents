@@ -3,7 +3,7 @@
 	    url = https://github.com/fkie/async_web_server_cpp.git
 [submodule "course_web_dev_ros"]
 	    path = course_web_dev_ros
-	    url = https://bitbucket.org/theconstructcore/course_web_dev_ros.git
+	    url = https://github.com/tianyaohu/course_web_dev_ros.git
 [submodule "interactive_marker_proxy"]
 	    path = interactive_marker_proxy
 	    url = https://github.com/RobotWebTools/interactive_marker_proxy.git
@@ -13,7 +13,7 @@
 
 [submodule "tortoisebot"]
 	    path = tortoisebot
-	        url = https://github.com/rigbetellabs/tortoisebot.git
+	        url = https://github.com/tianyaohu/tortoisebot.git
 [submodule "web_video_server"]
 	    path = web_video_server
 	        url = https://github.com/RobotWebTools/web_video_server.git
