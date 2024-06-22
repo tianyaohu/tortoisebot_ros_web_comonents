@@ -6,7 +6,7 @@
 	    url = https://github.com/tianyaohu/course_web_dev_ros.git
 [submodule "interactive_marker_proxy"]
 	    path = interactive_marker_proxy
-	    url = https://github.com/RobotWebTools/interactive_marker_proxy.git
+	    url = https://github.com/tianyaohu/interactive_marker_proxy.git
 [submodule "tf2_web_republisher"]
 	    path = tf2_web_republisher
 	    url = https://github.com/RobotWebTools/tf2_web_republisher.git
