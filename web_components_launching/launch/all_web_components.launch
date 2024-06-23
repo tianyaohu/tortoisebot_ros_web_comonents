@@ -7,6 +7,10 @@
     <!-- Launch the web server from the course_web_dev_ros package -->
     <include file="$(find course_web_dev_ros)/launch/web.launch"/>
 
+    <!-- Static Transform Publisher for odom to base_link -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_base_link_broadcaster"
+          args="0 0 0 0 0 0 odom base_link" />
+
     <!-- Launch mapping from the tortoisebot_slam package -->
     <include file="$(find tortoisebot_slam)/launch/mapping.launch"/>
 
@@ -14,7 +18,7 @@
     <node pkg="course_web_dev_ros" type="turtlebot_2_action_server.py" name="tortoisebot_action_server" output="screen"/>
 
     <!-- Run tf2 web republisher -->
-    <node pkg="tf2_web_republisher" type="tf2_web_republisher"  name="tf2_web_republisher" output="screen"/>
+    <node pkg="tf2_web_republisher" type="tf2_web_republisher" name="tf2_web_republisher" output="screen"/>
     
     <!-- Interactive Marker Proxy (MUST to tunnel update to http server) -->
     <node pkg="interactive_marker_proxy" type="proxy" name="interactive_marker_proxy" output="screen">
@@ -23,6 +27,7 @@
     </node>
 
     <!-- Start Interactive Marker Server -->
-    <node pkg="web_components_launching" type="marker_node.py"  name="interactive_marker_server" output="screen"/>
+    <node pkg="web_components_launching" type="marker_node.py" name="interactive_marker_server" output="screen"/>
+
 
 </launch>
