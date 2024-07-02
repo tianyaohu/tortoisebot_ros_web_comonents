@@ -1,0 +1,21 @@
+<launch>
+  <!-- Arguments for ports with default values -->
+  <arg name="SLOT_ROSBRIDGE_PORT" default="20001" />
+  <arg name="ROSBRIDGE_INTERNAL_PORT" default="9090" />
+  <arg name="WEB_VIDEO_SERVER_PORT" default="11315" />
+
+  <!-- Start rosbridge websocket server -->
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+    <arg name="port" value="$(arg ROSBRIDGE_INTERNAL_PORT)" />
+    <arg name="websocket_external_port" value="$(arg SLOT_ROSBRIDGE_PORT)" />
+  </include>
+  
+  <!-- Start web video server -->
+  <node pkg="web_video_server" type="web_video_server" name="web_video_server" output="screen">
+    <param name="port" value="$(arg WEB_VIDEO_SERVER_PORT)" />
+  </node>
+
+    <!-- Run tf2 web republisher -->
+    <node pkg="tf2_web_republisher" type="tf2_web_republisher" name="tf2_web_republisher" output="screen"/>
+    
+</launch>
